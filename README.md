@@ -53,6 +53,8 @@ print(filtered.count())                    # 输出: 3
 ### **关键设计思想**
 - **数据本地性**：调度时优先将计算任务分配给存储对应分区的节点
 - **窄/宽依赖**：优化任务划分（窄依赖可流水线执行，宽依赖需 Shuffle）
+1.窄依赖：子RDD生成父RDD时，没有发生shuffle，即分区间的数据重组
+2.  <img width="588" height="438" alt="image" src="https://github.com/user-attachments/assets/d538ba7f-e8bf-4c93-8e83-bb0f631ecbd5" />
 
 通过 RDD 模型，Spark 实现了高效的**内存计算**和**容错机制**，适合迭代式算法和交互式数据分析。
 
